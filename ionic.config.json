@@ -1,0 +1,7 @@
+{
+  "name": "assinaturaDigital",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
