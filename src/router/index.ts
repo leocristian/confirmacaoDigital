@@ -7,6 +7,7 @@ import LicensePage from '../views/LicensePage.vue'
 import ConfirmationPage from '../views/ConfirmationPage.vue'
 import MoreInfoPage from '../views/MoreInfoPage.vue'
 import DocumentPage from '../views/DocumentPage.vue'
+import PhotoDocPage from '../views/PhotoDocPage.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -37,6 +38,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/photoInfo',
     name: 'PhotoInfo',
     component: PhotoInfoPage
+  },
+  {
+    path: '/photoDocPage',
+    name: 'PhotoDocPage',
+    component: PhotoDocPage
   },
   {
     path: '/takePhoto',

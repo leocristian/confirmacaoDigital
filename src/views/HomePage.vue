@@ -23,9 +23,11 @@
 
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, 
-         IonTitle, IonToolbar, IonButton
+         IonTitle, IonToolbar, IonButton,
+         alertController
 } from '@ionic/vue';
 import { defineComponent } from 'vue';
+import { setUserData, } from '@/composables/userData';
 
 export default defineComponent({
   name: 'HomePage',
@@ -38,8 +40,20 @@ export default defineComponent({
     IonButton
   },
   methods: {
-    confirmBtn(){
-      this.$router.push('moreInfo')
+    async confirmBtn(){
+      await navigator.geolocation.getCurrentPosition(async (position) => {
+        await setUserData(position.coords.latitude, position.coords.longitude);
+        this.$router.push('moreInfo')
+        }, async (error) => {
+          const alert = await alertController.create({
+            header: 'Aviso',
+            message: 'Você deve ligar seu GPS para continuar!',
+            buttons: ['OK'],
+          });
+          console.log(error);
+          await alert.present();
+      });
+        
     }
   }
 });

@@ -17,7 +17,7 @@
 					</ion-content>
 				</ion-card>
       </div>
-      <div class="check-container">
+      <div class="check-container" >
            <ion-checkbox @click="setCheck()"></ion-checkbox>
            <span class="check-text">Minha compra está correta.</span>
       </div>
@@ -28,9 +28,11 @@
 
 <script lang="ts">
 import { IonContent, IonHeader, IonPage, 
-         IonToolbar, IonButton, 
-          IonBackButton, IonButtons, alertController, IonCard
+         IonToolbar, IonButton, IonBackButton, 
+         IonButtons, alertController, IonCard,
+         IonCheckbox
 } from '@ionic/vue';
+
 import { defineComponent } from 'vue';
 
 export default defineComponent({
@@ -43,7 +45,8 @@ export default defineComponent({
     IonButton,
     IonBackButton,
     IonButtons,
-		IonCard
+		IonCard,
+    IonCheckbox
   },
   data(){
       return { check: false }
@@ -56,7 +59,7 @@ export default defineComponent({
 			if(!this.check){
 				const alert = await alertController.create({
           header: 'Aviso',
-          message: 'Você deve confirmar os dados para continuar!',
+          message: 'Você deve confirmar sua compra para continuar!',
           buttons: ['OK'],
         });
         await alert.present();
@@ -82,7 +85,7 @@ export default defineComponent({
 	color: #727171;
 }
 .minuta-img {
-	height: 600px;
+	height: 700px;
 	display: block;
   margin: 0px auto;
 }
