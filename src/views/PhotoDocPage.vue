@@ -42,11 +42,13 @@
             </ion-img>
 						<ion-button color="success" @click="confirmBtn()">Continuar</ion-button>
 				</div>
-        <div class="btns-container">
-          <ion-button color="success" @click="confirmBtn()">Continuar</ion-button>
-        </div>
       </div>
     </ion-content>
+		<div v-if="photos.length != 0">
+      <div class="btns-container">
+        <ion-button color="success" @click="confirmBtn()">Continuar</ion-button>
+      </div>
+    </div>
   </ion-page>
 </template>
 

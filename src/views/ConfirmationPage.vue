@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { getUserData } from '@/composables/userData';
+
 import { IonContent, IonHeader, IonPage, 
          IonToolbar, IonButton, IonBackButton, IonButtons
 } from '@ionic/vue';

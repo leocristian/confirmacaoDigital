@@ -9,17 +9,15 @@
     </ion-header>
     
     <ion-content :fullscreen="true">
-    
       <div id="info-container">
         <h2>Foto com documento</h2>
           <p>&emsp;Agora vamos precisar tirar uma foto sua segurando um documento.
             Certifique-se de verificar todos os itens abaixo para tirar suas fotos.</p>
           <ul>
-              <li>Documento de RG ou CNH em mãos;</li>
-              <li>Esteja em um ambiende claro;</li>
-              <li>Câmera frontal do celular está ativada.</li>
+            <li>Documento de RG ou CNH em mãos;</li>
+            <li>Esteja em um ambiende claro;</li>
+            <li>Câmera frontal do celular está ativada.</li>
           </ul>
-          
       </div>
       <div v-if="photos.length === 0">
         <p class="photo-text">Siga o exemplo abaixo para tirar a foto.</p>
@@ -39,14 +37,15 @@
           <ion-fab horizontal="end" @click="deletePhoto()">
             <ion-icon class="icon-close" :icon="closeOutline"></ion-icon>
           </ion-fab>
-						<ion-img :src="photos[0].webviewPath">
-            </ion-img>
+          <ion-img :src="photos[0].webviewPath"></ion-img>
 				</div>
-        <div class="btns-container">
-          <ion-button color="success" @click="confirmBtn()">Continuar</ion-button>
-        </div>
       </div>
     </ion-content>
+    <div v-if="photos.length != 0">
+      <div class="btns-container">
+        <ion-button color="success" @click="confirmBtn()">Continuar</ion-button>
+      </div>
+    </div>
   </ion-page>
 </template>
 
